@@ -1,25 +1,52 @@
-# Healthcare Risk Adjustment & Analytics Dashboard
+# Healthcare Claims Revenue Cycle Dashboard — Power BI
 
-## Project Overview
-This repository contains a comprehensive Power BI data model and reporting architecture tailored for Healthcare Risk Adjustment operations. The analytics framework is engineered to audit, validate, and track complex Hierarchical Condition Category (HCC) data logic across multiple payer environments, driving financial forecasting and revenue cycle integrity.
+An interactive Power BI dashboard analyzing health insurance claims data to surface 
+key Revenue Cycle Management (RCM) KPIs — claim volume, approval/denial rates, and 
+reimbursement amounts — enabling data-driven decisions on billing performance and 
+claims processing efficiency.
 
-## Key Analytics & Business Impact
-* **Payer Metrics Architecture:** Integrated data structures mapped to major payer frameworks including Centene (ACA/MA), Elevance (MRA), and Humana.
-* **Risk Score Optimization:** Designed automated calculation logic to track Risk Adjustment Factor (RAF) trends and identify gaps in documentation.
-* **Revenue Integrity:** Streamlined pre-billing audit pathways to pinpoint root causes of systemic documentation deficits and minimize regulatory non-compliance risks.
+## Overview
 
-## Data Model & Architecture
-The system utilizes a scalable relational data schema designed to handle high-volume healthcare electronic records seamlessly. 
+This dashboard ingests raw health insurance claims data and transforms it into a 
+single-page executive view covering claim status distribution, financial exposure, 
+and provider-specialty performance. Built to simulate a real-world RCM analytics 
+use case: tracking claims from submission through approval, denial, or pending 
+resolution.
 
-## Dashboard Previews
-Below are interactive layout configurations showcasing key performance indicators and risk-adjusted metrics:
+## Key Features
 
-## Tools & Technologies Used
-* **Business Intelligence:** Power BI Desktop / Service
-* **Languages & Modeling:** DAX (Data Analysis Expressions), Power Query (M)
-* **Domain Context:** CMS Risk Adjustment, HCC Coding, ICD-10-CM Mapping
+- **KPI Cards** — Total Claims, Approved Claims, Rejected Claims, Pending Claims
+- **Financial Tracking** — Total Amount Submitted, Paid, Denied, and Pending
+- **Rate KPIs with Targets** — Approval Rate % and Denial Rate % benchmarked 
+  against industry targets (90% approval / <5% denial), with year-over-year trend lines
+- **Provider Specialty Breakdown** — Clustered column chart comparing approval 
+  and denial rates across provider specialties to identify outlier departments
+- **Dynamic Filtering** — Slicer panel for Year, Claim Status, Submission Method, 
+  and Claim Type
 
-## How to Interact with this Project
-1. Clone or download this repository.
-2. Ensure you have the latest version of [Power BI Desktop](https://powerbi.microsoft.com/desktop/) installed.
-3. Open `demopowerbi.pbix` to explore the underlying data model, DAX measures, and interactive elements.
+## DAX Measures
+
+Custom measures built for this model include:
+- `Total Claims`, `Approved Claims`, `Rejected Claims`, `Pending Claims`
+- `Total Amount Submitted`, `Total Amount Paid`, `Total Amount Denied`, `Total Amount Pending`
+- `Approval Rate %`, `Denial Rate %` (using `DIVIDE()` for safe handling of zero-claim filter contexts)
+- Target benchmarks for approval and denial rate goal-tracking
+
+## Tools & Techniques
+
+- **Power BI Desktop** — report design, DAX measure authoring, data modeling
+- **Power Query** — data shaping and transformation
+- **SQL** — querying and structuring source claims tables prior to modeling
+- **Data Modeling** — relationship design between claims, provider, and date dimensions
+
+## Dataset
+
+Built on a synthetic health insurance claims dataset (~4,500 records) covering 
+claim status, provider specialty, submission method, claim type, and claim amount 
+fields — structured to mirror real-world payer/provider claims data.
+
+## Skills Demonstrated
+
+Revenue Cycle Management (RCM) analytics · Healthcare claims data modeling · 
+DAX measure design · KPI benchmarking · Denial/approval rate analysis · 
+Dashboard UX for healthcare stakeholders
