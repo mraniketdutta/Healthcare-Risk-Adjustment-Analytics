@@ -16,7 +16,7 @@ Below are interactive layout configurations showcasing key performance indicator
 
 ## Tools & Technologies Used
 * **Business Intelligence:** Power BI Desktop / Service
-* **Languages & Modeling:** DAX (Data Analysis Expressions), Power Query (M), JSON UI Theming (`CopilotDefault.json`)
+* **Languages & Modeling:** DAX (Data Analysis Expressions), Power Query (M)
 * **Domain Context:** CMS Risk Adjustment, HCC Coding, ICD-10-CM Mapping
 
 ## How to Interact with this Project
